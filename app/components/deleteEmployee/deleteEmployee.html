@@ -1,0 +1,27 @@
+<h2 style="color: lightslategray"><strong>Delete Employee</strong></h2>
+<hr/>
+<form name="deleteEmployeeForm" style="color: lightslategray; font-weight: bold">
+   
+         <div class="well well-sm " style="background-color: lightcoral;color: whitesmoke;" 
+         ng-show="message" >
+         <span><strong>{{message}}</strong></span>
+         </div>
+    
+    <div class="row">
+  <div class="col-sm-6">Enter the ID for employee to be deleted:</div>
+   <div class="col-sm-6"><input type="text" name="delId" placeholder="Enter the EmployeeID" class="form-control"
+    ng-model="employeeDelete" ng-pattern="/^[0-9]{1,7}$/" required>
+    <span style="color:darkred" ng-show="deleteEmployeeForm.delId.$error.pattern">
+                *Please enter in numerals
+            </span>
+            <span style="color:darkred" ng-show="deleteEmployeeForm.delId.$touched && deleteEmployeeForm.delId.$error.required">
+                *Employee ID is required
+            </span>
+            <!--<span ng-show="employeeDelete" style="color:darkred">{{message}}</span>-->
+           
+</div>
+    <br/><br/></div> 
+               
+        <div class="col-sm-6 col-sm-offset-6" > <input type="button" class="btn btn-primary" ng-disabled="deleteEmployeeForm.$invalid" value="Delete Employeee" ng-click="DeleteEmployee()" /></div> 
+</div>
+   </form>

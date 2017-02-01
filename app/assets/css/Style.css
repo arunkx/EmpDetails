@@ -1,0 +1,51 @@
+.header {
+    width: 800px;
+    height:80px;
+    text-align:center;
+    background-color:#6672FF;
+    color: white;
+    border:0.5px solid white;
+}
+.footer{
+    text-align:center;
+    background-color:#6672FF;
+    color: white;
+    border:0.5px solid white;
+}
+.leftMenu{
+    height:500px;
+    background-color:#6672FF;
+    width:200px;
+    color: white;
+    border:1px solid white;
+    
+}
+.mainContent{
+    height:500px;
+    background-color:#6672FF;
+    width:650px;
+    color: white;
+    
+   
+    
+
+}
+input,select
+{
+   color: black; 
+}
+a{
+    display:block;
+    padding:5px;
+    color: white;
+}
+h1,h2{
+color: white;
+text-align :center;
+font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2px;
+}

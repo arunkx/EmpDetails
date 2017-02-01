@@ -1,0 +1,48 @@
+<div class="panel panel-default col-md-offset-3 col-md-6 col-sm-6 col-sm-offset-3"  ng-hide="loginFlag" style="color: lightslategray; font-weight: bold">
+<div class="panel panel-heading"><strong>Sign In</strong></div>
+    <div class="panel-body">
+        <form name="loginForm">
+      
+     <div class="well well-sm" style="background-color: lightcoral;color: whitesmoke; " ng-show="message">
+         <span><strong>{{message}}</strong></span>
+     </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-md-offset-3">
+                    Username
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" class="form-control " name="username" placeholder="Enter username" ng-model="username" required />
+                    <span style="color:darkred" ng-show="loginForm.username.$touched && loginForm.username.$error.required"> *Username is required
+
+</span>
+</div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-md-offset-3">
+        Password
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <input type="password" class="form-control" name="password" placeholder="Enter password" ng-model="password" required/>
+        <span style="color:darkred" ng-show="loginForm.password.$touched && loginForm.password.$error.required"> *Password is required
+
+</span>
+</div>
+</div>
+<br/>
+<div class="row">
+    <div>
+        <span class="pull-right">
+           <button type="button" class="btn btn-default" ng-click="Reset()">Reset</button>
+           <button type="button" class="btn btn-success" ng-click="Submit()" ng-disabled="loginForm.$invalid">Submit</button> 
+           </span>
+    </div>
+    <!--<span style="color:darkred">{{message}}</span>-->
+</div>
+
+</form>
+
+</div>
+
+</div>
+</div>

@@ -1,0 +1,60 @@
+<div class="panel panel-primary col-md-offset-3 col-md-6 col-sm-6 col-sm-offset-3">
+    <div class="panel panel-heading"><strong>Sign Up</strong></div>
+<form name="signupForm"  style="color: lightslategray; font-weight: bold">
+    
+    <div class="row">
+        <div class="col-sm-6">Name</div>
+        <div class="col-sm-6"><input type="text" name="name" class="form-control" placeholder="Enter the name" ng-model="name" required/>
+            <span style="color:darkred" ng-show="signupForm.name.$touched && signupForm.name.$invalid"> *Name is required
+</span>
+</div>
+
+</div><br/>
+<div class="row">
+    <div class="col-sm-6">Email</div>
+    <div class="col-sm-6"><input type="email" name="email" placeholder="Enter email" class="form-control" ng-model="email" required/>
+        <span style="color:darkred" ng-show="signupForm.email.$touched && signupForm.email.$invalid"> *Email is required
+</span>
+   <span style="color:darkred" ng-show="signupForm.email.$error.email"> *Invalid email address
+</span>
+<span ng-show="email" style="color:darkred" >{{emailtaken}}
+</div>
+
+</div><br/>
+<div class="row">
+    <div class="col-sm-6">Username</div>
+    <div class="col-sm-6"><input type="text" name="username" placeholder="Enter username" class="form-control" ng-model="username" required/>
+        <span style="color:darkred" ng-show="signupForm.username.$touched && signupForm.username.$invalid"> *Username is required
+</span>
+<span style="color:darkred" ng-show="username" >{{usertaken}}
+</span>
+</div>
+
+</div><br/>
+<div class="row">
+    <div class="col-sm-6">Password</div>
+    <div class="col-sm-6"><input type="password" name="password" placeholder="Enter password" class="form-control" ng-model="password" required/>
+        <span style="color:darkred" ng-show="signupForm.password.$touched && signupForm.password.$invalid"> *Password is required
+</span>
+</div>
+
+</div><br/>
+<div class="row">
+    <div class="col-sm-6">Confirm Password</div>
+    <div class="col-sm-6"><input type="password" name="cnfmPassword" placeholder="Enter password again" class="form-control" ng-model="cnfmPassword"
+            required/>
+        <span style="color:darkred" ng-show="(password!=cnfmPassword)&&(password!=null)"> *Password mismatch! Please type same password.
+</span>
+</div>
+
+</div>
+<br/><br/>
+<div class="row">
+
+    <div class="col-sm-6 col-sm-offset-6">
+        <button type="button" ng-disabled="signupForm.$invalid" ng-click="AddUser()">Create User</button>
+    </div>
+</div>
+<br/>
+</form>
+</div>

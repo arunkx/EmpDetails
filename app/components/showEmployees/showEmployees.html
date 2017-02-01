@@ -1,0 +1,31 @@
+    <h2 style="color: lightslategray"><strong>Employees</strong></h2>
+<hr/>
+    <table class="table table-bordered table-responsive" style="color: lightslategray; font-weight: bold" cellpadding="2" cellspacing="2" border="2" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Added By</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr ng-repeat="employee in employees">
+
+            <td>{{employee.EmpId}}</td>
+            <td>{{employee.EmpName}}</td>
+            <td>{{employee.EmpAddress}}</td>
+            <td>{{employee.EmpGender}}</td>
+            <td>{{employee.EmpSalary}}</td>
+            <td>{{employee.DeptId}}</td>
+            <td>{{employee.AddedBy}}</td>
+        </tr>
+    </tbody>
+
+</table>
+

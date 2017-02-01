@@ -1,0 +1,115 @@
+<h2 style="color: lightslategray"><strong>Create Employee</strong></h2>
+<hr/>
+<form name="CreateEmployeeform" style="color: lightslategray;; font-weight: bold" data-toggle="validator" role="form">
+    <div class="row">
+        <div class="col-sm-6"><strong>Name</strong></div>
+        <div class="col-sm-6"><input type="text" class="form-control" ng-model="empName" id="name" name="empName" placeholder="Enter the name"
+                required>
+            <span style="color:red" ng-show="CreateEmployeeform.empName.$touched && CreateEmployeeform.empName.$invalid">*Name is required</span>
+        </div>
+
+        <!--<span class="alert  col-sm-offset-6" role="alert" ng-hide="empName" style="color: red">*Name is required</span>-->
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6"><strong>Address</strong></div>
+        <div class="col-sm-6"><input type="text" class="form-control" ng-model="empAddress" name="empAddress" placeholder="Enter the place" required>
+            <span style="color:red" ng-show="CreateEmployeeform.empAddress.$touched && CreateEmployeeform.empAddress.$invalid">
+                *Address is required
+            </span>
+        </div>
+
+        <!--<span class="alert  col-sm-offset-6" role="alert" ng-hide="empAddress" style="color: red">*Address is required</span>-->
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6 "><strong>Gender</strong></div>
+        <div class="col-sm-6">
+            <label class="radio-inline"><input type="radio" value="Male" name="gender" ng-model="empGender" ng-required="!gender">Male</label>
+            <label class="radio-inline"><input type="radio" value="Female" name="gender" ng-model="empGender"  ng-required="!gender">Female</label>
+            <br/>
+            <!--<span class="alert" role="alert" ng-hide="empGender" style="color: red">* Please choose gender</span>-->
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6"><strong>Salary</strong></div>
+        <div class="col-sm-6"><input type="text" class="form-control" ng-model="empSalary" ng-pattern="/^[0-9]{1,7}$/" name="empSalary" placeholder="Enter the salary" required>
+             <span style="color:red" ng-show="CreateEmployeeform.empSalary.$error.pattern">
+                *Please enter in numerals
+            </span>
+            <span style="color:red" ng-show="CreateEmployeeform.empSalary.$touched && CreateEmployeeform.empSalary.$error.required">
+                *Salary is required
+            </span>
+        </div>
+
+        <!--<span class="alert  col-sm-offset-6" role="alert" ng-hide="empSalary" style="color: red">*Salary is required</span>-->
+
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6"><strong>Department</strong></div>
+        <div class="col-sm-6"><select ng-model="depart" class="form-control" name="dept" required>
+            <option value="" disabled selected>*Choose Department</option>
+            <option  ng-value="{{dept.DeptId}}" ng-repeat="dept in departments">{{dept.DeptName}}</option>
+            
+        </select>
+            <span style="color:red" ng-show="CreateEmployeeform.dept.$touched && CreateEmployeeform.empSalary.$invalid">
+                *Please choose department
+            </span>
+        </div>
+
+        <!--<span class="alert  col-sm-offset-6" role="alert" ng-hide="empSalary" style="color: red">*Choose the Department</span> -->
+    </div>
+    <br/><br/>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-6">
+            <input type="button" ng-disabled="CreateEmployeeform.$invalid" class="btn btn-primary" value="Add" ng-click="Add()"></div>
+    </div>
+
+</form>
+
+
+
+
+
+<!--<form>
+    <div class="row">
+        <div class="col-sm-6">Name</div>
+        <div class="col-sm-6"><input type="text" class="form-control"
+         ng-model="empName" id="name" placeholder="Enter the name"></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6">Address</div>
+        <div class="col-sm-6"><input type="text" class="form-control" 
+        ng-model="empAddress" placeholder="Enter the place"></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6 ">Gender</div>
+        <div class="col-sm-6">
+            <label class="radio-inline "><input type="radio" value="Male" name="gender" ng-model="empGender">Male</label>
+            <label class="radio-inline "><input type="radio" value="Female" name="gender" ng-model="empGender">Female</label>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6">Salary</div>
+        <div class="col-sm-6"><input type="text" class="form-control" 
+        ng-model="empSalary" placeholder="Enter the salary"></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6">Department</div>
+        <div class="col-sm-6"><select ng-model="depart" class="form-control">
+            <option value="" disabled selected>Choose Department</option>
+            <option  ng-value="{{dept.DeptId}}" ng-repeat="dept in departments">{{dept.DeptName}}</option>
+        </select></div>
+    </div>
+    <br/><br/>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-6"><input type="button" class="btn btn-primary" value="Add" ng-click="Add()"></div>
+    </div>
+
+</form>-->

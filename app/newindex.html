@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="assets/css/Style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <base href="/" />
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="components/createEmployee/createEmployeeController.js"></script>
+    <script src="components/deleteEmployee/deleteEmployeeController.js"></script>   
+    <script src="components/editEmployee/editEmployeeController.js"></script>
+    <script src="components/home/homeController.js"></script>
+    <script src="components/showEmployees/showEmployeesController.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navigation-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <span class="navbar-brand">OneAdvanced</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li><a href="home"><span class="btn btn-default glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="showEmployees"><span class="btn btn-default glyphicon glyphicon-user"></span> Show Employees</a></li>
+                    <li><a href="createEmployee"><span class="btn btn-default glyphicon glyphicon-plus"></span> Create Employee</a></li>
+                    <li><a href="editEmployee"><span class="btn btn-default glyphicon glyphicon-pencil"></span> Edit Employees</a></li>
+                    <li><a href="deleteEmployee"><span class="btn btn-default glyphicon glyphicon-remove"></span> Delete Employee</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user"></span>Sign In</a>
+                   </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-primary col-md-offset-3 col-md-6 col-sm-6 col-sm-offset-3" align="center">
+            <div class="panel-heading">Login here</div>
+            <div class="panel-body" ng-view>
+                
+
+            </div>
+            <div class="panel-footer">@OneAdvanced</div>
+        </div>
+    </div>
+</body>
+</html>

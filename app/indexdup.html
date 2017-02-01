@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+
+    <!--<link rel="stylesheet" href="assets/css/Style.css" />-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <base href="/" />
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="assets/js/ngValidate.js"></script>
+    <script src="components/createEmployee/createEmployeeController.js"></script>
+    <script src="components/deleteEmployee/deleteEmployeeController.js"></script>
+    <script src="components/editEmployee/editEmployeeController.js"></script>
+    <script src="components/home/homeController.js"></script>
+    <script src="components/showEmployees/showEmployeesController.js"></script>
+    <script src="components/login/loginController.js"></script>
+    <script src="components/logout/logoutController.js"></script>
+    <script src="components/about/aboutController.js"></script>
+    <script src="components/contactus/contactusController.js"></script>
+    <script src="components/signup/signupController.js"></script>
+    
+
+
+</head>
+
+<body ng-style="{'background-image':'url(assets/images/bgem.jpg)'}">
+    <div class="container">
+        <!--container start-->
+
+
+        <!--nav start-->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navigation-header">
+                <a href="/home" class="navbar-brand"><img ng-src="assets/images/advanced-logo.svg" height="40px" width="110px" /></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <br/>
+            </div>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li ng-show="true"><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                    <li ng-show="loginFlag"><a href="showEmployees"><span class="glyphicon glyphicon-user"></span> Employees</a></li>
+                    <li ng-show="loginFlag"><a href="createEmployee"><span class="glyphicon glyphicon-plus"></span> Create Employee</a></li>
+                    <li ng-show="loginFlag"><a href="editEmployee"><span class="glyphicon glyphicon-pencil"></span> Edit Employees</a></li>
+                    <li ng-show="loginFlag"><a href="deleteEmployee"><span class="glyphicon glyphicon-remove"></span> Delete Employee</a></li>
+                    <li ng-show="true"><a href="about"><span class="glyphicon glyphicon-globe"></span> About</a></li>
+                    <li ng-show="true"><a href="contactus"><span class="glyphicon glyphicon-phone-alt"></span> Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-hide="loginFlag">
+                    <li><a href="login"><span class="glyphicon glyphicon-log-in "></span> Login</a></li>
+                    <li><a href="signup"><span class="glyphicon glyphicon-hand-up "></span> Sign Up</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-show="loginFlag">
+                    <li><a href="logout"><span class="glyphicon glyphicon-log-out "></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--nav end-->
+
+
+
+
+        <div class="panel panel-default ">
+            <!--panel start-->
+            <div align="center" class="panel-heading" style="color:darkolivegreen; background-color:ghostwhite">
+<h3 style="font-family:'Algerian'">Employee Details Application</h3>
+</div>
+<div class="panel-body" style="height: 375px;max-height: 425px; overflow-y: scroll;"
+ng-style="{'background-image':'url(assets/images/bgbg.jpg)'}">
+ 
+<ng-view> </ng-view>
+</div>
+<div align="center" class="panel-footer" style="color:darkolivegreen; background-color:ghostwhite"><span class="glyphicon glyphicon-copyright-mark"></span><strong> OneAdvanced</strong></div>
+
+</div>
+<!--panel end-->
+
+
+</div>
+<!-- container end-->
+
+
+</body>
+
+</html>
